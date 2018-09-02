@@ -193,25 +193,30 @@
 			}'
 			解析：select * from customer where address like "%mill%" and address like "%lane%";
 			{
-  "query": {
-    "match": {"name": "liu" }
-  }, 
-    "from":0,
-    "size":10
-}
+ 
+			 "query": {
+			    "match": {"name": "liu" }
+			  }, 
+			    "from":0,
+			    "size":10
+			}
+			
 			curl -XPOST 127.0.01:9200/customer/_search?pretty -d '
 				{
-				  "query": {
+				 
+				 "query": {
 					"bool": {
-					  "must": [
-						{ "match": { "age": "40" } }
-					  ],
-					  "must_not": [
+					
+					"must": [					
+					{ "match": { "age": "40" } }
+					  ],					 
+					 "must_not": [		
 						{ "match": { "state": "ID" } }
 					  ]
 					}
 				  }
 				}'
+			
 			解析：select * from customer where age =40 and state not in ("ID");
 			
 			curl -XPOST 127.0.01:9200/customer/_search?pretty -d '
