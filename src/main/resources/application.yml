@@ -1,0 +1,15 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: chenming
+      #cluster-nodes: 192.168.1.200:9300,192.168.1.201:9300
+      #cluster-nodes: 10.2.224.33:9300,10.2.224.37:9300,10.2.224.34:9300,10.2.224.35:9300,10.2.224.36:9300
+      cluster-nodes: localhost:9300
+
+      
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+server: 
+  port: 8080
